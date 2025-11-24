@@ -1,0 +1,8 @@
+export interface IStereo {
+    on(): void;
+    off(): void;
+    setCd(): void;
+    setDvd(): void;
+    setRadio(): void;
+    setVolume(value: number): void;
+}
