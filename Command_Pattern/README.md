@@ -181,27 +181,32 @@ classDiagram
         +setVolume(value)
     }
 
-    %% Relationships
-    Command <|.. NoCommand : implements
-    Command <|.. LightOnCommand : implements
-    Command <|.. LightOffCommand : implements
-    Command <|.. StereoOnWithCDCommand : implements
-    Command <|.. StereoOffCommand : implements
-    Command <|.. MacroCommand : implements
+    Command <|.. NoCommand
+    Command <|.. LightOnCommand
+    Command <|.. LightOffCommand
+    Command <|.. StereoOnWithCDCommand
+    Command <|.. StereoOffCommand
+    Command <|.. MacroCommand
 
-    LightOnCommand --> ILight : uses
-    LightOffCommand --> ILight : uses
-    StereoOnWithCDCommand --> IStereo : uses
-    StereoOffCommand --> IStereo : uses
-    MacroCommand o--> Command : contains
+    LightOnCommand --> ILight
+    LightOffCommand --> ILight
+    StereoOnWithCDCommand --> IStereo
+    StereoOffCommand --> IStereo
+    MacroCommand o--> Command
+    RemoteControl o--> Command
 
-    RemoteControl o--> Command : holds many
+    ILight <|.. Light
+    IStereo <|.. Stereo
 
-    ILight <|.. Light : implements
-    IStereo <|.. Stereo : implements
-
-    %% Fixed note (this was the source of the error!)
-    note right of RemoteControl : Client (main.ts) creates:\n• Concrete Commands\n• Receivers (Light, Stereo)\n• Sets commands into RemoteControl\n  (configures at runtime)
+    %% Add blank line before note and wrap multi-line text
+    note right of RemoteControl
+    """
+    Client (main.ts) creates:
+    • Concrete Commands
+    • Receivers (Light, Stereo)
+    • Sets commands into RemoteControl
+      (configures at runtime)
+    """
 ```
 
 In our TypeScript version:
