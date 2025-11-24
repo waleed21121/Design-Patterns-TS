@@ -14,3 +14,6 @@ Strategy_Pattern/dist
 
 Singleton_Pattern/node_modules
 Singleton_Pattern/dist
+
+Command_Pattern/node_modules
+Command_Pattern/dist
