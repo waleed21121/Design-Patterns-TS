@@ -197,16 +197,6 @@ classDiagram
 
     ILight <|.. Light
     IStereo <|.. Stereo
-
-    %% Add blank line before note and wrap multi-line text
-    note right of RemoteControl
-    """
-    Client (main.ts) creates:
-    • Concrete Commands
-    • Receivers (Light, Stereo)
-    • Sets commands into RemoteControl
-      (configures at runtime)
-    """
 ```
 
 In our TypeScript version:
