@@ -17,3 +17,6 @@ Singleton_Pattern/dist
 
 Command_Pattern/node_modules
 Command_Pattern/dist
+
+Adapter_Pattern/node_modules
+Adapter_Pattern/dist
